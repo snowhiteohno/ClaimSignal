@@ -1,33 +1,97 @@
-
 # ClaimSignal
 
-Issue-to-PR intelligence for open source repos.
+Contribution intelligence for open source development.
 
-Paste a GitHub issue URL and ClaimSignal tells you:
-- whether it is assigned
-- linked PRs
-- competing drafts
-- recent "I'm working on this" comments
-- maintainer response latency
-- median time-to-merge for first-time contributors in that repo
+ClaimSignal helps contributors evaluate an issue before investing time into solving it.
 
-## Why this exists
+Given a GitHub issue URL, ClaimSignal analyzes repository activity and surfaces signals that are usually hidden across comments, pull requests, maintainer discussions, and contributor history.
 
-Open source contribution is often blocked by uncertainty, not code.
+The result is a practical answer to a simple question:
 
-ClaimSignal reduces duplicate effort by revealing whether an issue is truly open, already in motion, or structurally slow to merge.
+**Is this issue actually worth working on?**
 
-## Features
+## Insights Generated
 
-- GitHub issue analysis from a single URL
-- Assignee and label detection
-- PR linkage discovery
-- Comment history scan for claim statements
-- Maintainer responsiveness metrics
-- First-time contributor merge timing stats
-- Repo-level contribution friction signal
+### Ownership Analysis
+
+Identify:
+
+- Current assignees
+- Previous assignees
+- Active contributors discussing the issue
+- Unofficial claims made in comments
+
+### Pull Request Discovery
+
+Locate:
+
+- Linked pull requests
+- Open draft pull requests
+- Recently closed attempts
+- Competing implementations
+
+### Maintainer Behavior
+
+Measure:
+
+- Average response latency
+- Review turnaround time
+- Merge frequency
+- Maintainer participation rate
+
+### Contributor Success Metrics
+
+Calculate:
+
+- Median merge time
+- First-time contributor success rate
+- Average review cycles
+- Repository contribution friction
 
 ## Example
 
 ```bash
 claimsignal analyze https://github.com/org/repo/issues/123
+```
+
+## Sample Output
+
+```text
+Issue Status:
+Active
+
+Assignment:
+Unassigned
+
+Competing Work:
+2 draft pull requests found
+
+Maintainer Response Time:
+14.2 days
+
+First-Time Contributor Median Merge:
+31 days
+
+Recommendation:
+High risk of duplicate effort.
+```
+
+## Use Cases
+
+- Choosing contribution targets
+- Avoiding duplicate work
+- Evaluating repository health
+- Planning open source participation
+- Contributor research
+
+## Roadmap
+
+- Browser extension
+- GitHub App integration
+- Repository opportunity ranking
+- Issue recommendation engine
+- Contributor matching
+
+## License
+
+MIT
